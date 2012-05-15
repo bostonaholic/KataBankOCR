@@ -25,6 +25,6 @@ public class BankOCR {
 
     private static void usage() {
         System.out.println("usage: ");
-        System.out.println("    java KataBankOCR <accountList.txt>");
+        System.out.println("    java BankOCR <accountList.txt>");
     }
 }
