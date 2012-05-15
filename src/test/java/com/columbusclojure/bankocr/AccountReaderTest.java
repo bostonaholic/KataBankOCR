@@ -7,12 +7,9 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-/**
- *
- * @author Matthew Boston <matthew.boston@gmail.com>
- */
 public class AccountReaderTest {
 	private static String TEST_RESOURCES = "src/test/resources/";
+	private static String TEST_FILENAME= "123456789.txt";
 
     @Test
     public void testGetNextAccount() throws IOException {
@@ -38,7 +35,7 @@ public class AccountReaderTest {
         String line2 = "  ||_  _|  | _||_|  ||_| _|";
         AccountNumberRepresentation expected = new AccountNumberRepresentation(line0, line1, line2);
         
-        AccountReader reader_file = new AccountReader(new File(TEST_RESOURCES + "123456789.txt"));
+        AccountReader reader_file = new AccountReader(new File(TEST_RESOURCES + TEST_FILENAME));
         assertEquals(expected, reader_file.getNextAccount());
     }
 }

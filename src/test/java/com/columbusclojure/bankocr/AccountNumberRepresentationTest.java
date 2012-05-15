@@ -7,7 +7,7 @@ import org.junit.Test;
 public class AccountNumberRepresentationTest {
     
     @Test
-    public void testGetDigitRepresentation_atIndex0() {
+    public void testGetDigitRepresentation_First() {
         String line0 = "    _  _     _  _  _  _  _ ";
         String line1 = "  | _| _||_||_ |_   ||_||_|";
         String line2 = "  ||_  _|  | _||_|  ||_| _|";
@@ -17,12 +17,11 @@ public class AccountNumberRepresentationTest {
                 "  |" +
                 "  |";
         AccountNumberRepresentation ocr = new AccountNumberRepresentation(line0, line1, line2);
-        assertEquals('1', ocr.getDigitRepresentationAtIndex(0).toChar());
         assertEquals(expected, ocr.getDigitRepresentationAtIndex(0).toString());
     }
 
     @Test
-    public void testGetDigitRepresentation_atIndex4() {
+    public void testGetDigitRepresentation_InMiddle() {
         String line0 = "    _  _     _  _  _  _  _ ";
         String line1 = "  | _| _||_||_ |_   ||_||_|";
         String line2 = "  ||_  _|  | _||_|  ||_| _|";
@@ -32,12 +31,11 @@ public class AccountNumberRepresentationTest {
                 "|_ " +
                 " _|";
         AccountNumberRepresentation ocr = new AccountNumberRepresentation(line0, line1, line2);
-        assertEquals('5', ocr.getDigitRepresentationAtIndex(4).toChar());
         assertEquals(expected, ocr.getDigitRepresentationAtIndex(4).toString());
     }
 
     @Test
-    public void testGetDigitRepresentation_atIndex8() {
+    public void testGetDigitRepresentation_Last() {
         String line0 = "    _  _     _  _  _  _  _ ";
         String line1 = "  | _| _||_||_ |_   ||_||_|";
         String line2 = "  ||_  _|  | _||_|  ||_| _|";
@@ -47,7 +45,6 @@ public class AccountNumberRepresentationTest {
                 "|_|" +
                 " _|";
         AccountNumberRepresentation ocr = new AccountNumberRepresentation(line0, line1, line2);
-        assertEquals('9', ocr.getDigitRepresentationAtIndex(8).toChar());
         assertEquals(expected, ocr.getDigitRepresentationAtIndex(8).toString());
     }
 
@@ -60,19 +57,11 @@ public class AccountNumberRepresentationTest {
     }
 
     @Test
-    public void testToString_NoIllNoErr() {
+    public void testToString_NoModifiers() {
         String line0 = " _  _  _  _  _  _  _  _    ";
         String line1 = "| || || || || || || ||_   |";
         String line2 = "|_||_||_||_||_||_||_| _|  |";
         assertEquals("000000051",new AccountNumberRepresentation(line0, line1, line2).toString());
-    }
-
-    @Test
-    public void testToString_UsingEachDigit_NoIllNoErr() {
-        String line0 = "    _  _     _  _  _  _  _ ";
-        String line1 = "  | _| _||_||_ |_   ||_||_|";
-        String line2 = "  ||_  _|  | _||_|  ||_| _|";
-        assertEquals("123456789",new AccountNumberRepresentation(line0, line1, line2).toString());
     }
 
     @Test

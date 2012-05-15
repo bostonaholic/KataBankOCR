@@ -6,10 +6,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-/**
- *
- * @author Matthew Boston <matthew.boston@gmail.com>
- */
 public class DigitRepresentationTest {
 
     @Test
