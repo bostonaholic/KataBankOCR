@@ -17,7 +17,7 @@ public class AccountNumberRepresentation {
     private static final int DIGIT_WIDTH = 3;
 
     /*
-     * This number of numbers in an Account Number
+     * The number of digits in an Account Number
      */
     public static final int ACCOUNT_WIDTH = 9;
 
@@ -35,7 +35,6 @@ public class AccountNumberRepresentation {
         this.line0 = line0;
         this.line1 = line1;
         this.line2 = line2;
-        digits = new ArrayList<DigitRepresentation>();
 
         parse();
         validate();
@@ -46,6 +45,7 @@ public class AccountNumberRepresentation {
      * account number
      */
     private void parse() {
+        digits = new ArrayList<DigitRepresentation>();
         for (int index = 0; index < ACCOUNT_WIDTH; index++) {
             this.digits.add(getDigitRepresentationAtIndex(index));
         }
@@ -100,12 +100,12 @@ public class AccountNumberRepresentation {
      * only as well as getting the account string with ILL/ERR appended.
      */
     public String toDigitString() {
-        String string = "";
+        StringBuilder builder = new StringBuilder();
         for(DigitRepresentation d : this.digits) {
-            string += d.toChar();
+            builder.append(d.toChar());
         }
 
-        return string;
+        return builder.toString();
     }
 
     /*
