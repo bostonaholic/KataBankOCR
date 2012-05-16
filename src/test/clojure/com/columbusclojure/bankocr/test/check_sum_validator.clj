@@ -1,6 +1,6 @@
 (ns com.columbusclojure.bankocr.test.check-sum-validator
   (:use clojure.test)
-  (:import [com.columbusclojure.bankocr CheckSumValidator]))
+  (:require [com.columbusclojure.bankocr.check-sum-validator :as CheckSumValidator]))
 
 (deftest check-sum-is-valid
   (is (CheckSumValidator/isValid "345882865"))
