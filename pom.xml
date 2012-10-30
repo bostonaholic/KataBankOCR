@@ -30,7 +30,7 @@
         <directory>src/test/resources</directory>
       </testResource>
 
-	  <testResource>
+	    <testResource>
         <directory>src/test/clojure</directory>
       </testResource>
     </testResources>
