@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.columbusclojure</groupId>
-  <artifactId>bankocr</artifactId>
+  <artifactId>KataBankOCR</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>bankocr</name>
+  <name>KataBankOCR</name>
   <url>http://maven.apache.org</url>
 
   <properties>
